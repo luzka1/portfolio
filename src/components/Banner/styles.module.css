@@ -1,0 +1,70 @@
+.container{
+    display: flex;
+    height: 85vh;
+    background-image: url('../../assets/images/background.svg');
+    justify-content: center;
+    background-size: cover;
+}
+
+.indicationDown{
+    position: absolute;
+    top: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.indicationDown img{
+    height: 25px;
+}
+
+.innerContainer{
+    display: flex;
+    align-items: center;
+    width: 85%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.innerContainer p{
+    font-size: 64px;
+    font-weight: 600;
+}
+
+.innerContainer > div{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.innerContainer > div p {
+    line-height: 90%;
+}
+
+.innerContainer > div > div{
+    font-size: 96px;
+    font-weight: 600;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.photo div{
+    width: 500px;
+    height: 500px;
+    background-image: url('../../assets/images/photolucas.svg');
+    background-position: center;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo div img {
+    height: 300px;
+}
+
