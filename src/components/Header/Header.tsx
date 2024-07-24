@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./styles.module.css";
 import logo from "../../assets/images/logo.svg";
 import brasil from "../../assets/images/brasil.svg";

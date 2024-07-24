@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
   --second-background: #1C0027;
   --header-background: #20062ce6;
   --background-trasparent: #0e001480;
+  --footer-background: #050007;
 }
   *{
     margin:0;
@@ -24,6 +25,14 @@ export const GlobalStyles = createGlobalStyle<{}>`
   body{
     background-color: var(--background-color);  
   }
+    footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--footer-background);
+    padding: 5rem 0;
+    gap:20px;
+}
   p{
     font-size:24px;
     letter-spacing:-1px;
@@ -37,11 +46,15 @@ export const GlobalStyles = createGlobalStyle<{}>`
     text-transform: uppercase;
     font-size: 92px;
     letter-spacing: -5px;
-}
+  }
     h2{
     font-size: 64px;
     letter-spacing: -2px;
-}
+  }
+    h3{
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
 
   .principalButton{
     display:flex;
@@ -58,6 +71,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     padding: 3px;
     overflow: hidden;
     font-weight:400;
+    cursor: pointer;
   }
 
   .outlinedButton {
@@ -74,6 +88,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     position: relative;
     overflow: hidden;
     font-weight:400;
+    cursor: pointer;
   }
   
   .outlinedButton::before {

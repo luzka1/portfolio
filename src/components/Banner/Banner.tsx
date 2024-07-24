@@ -16,7 +16,7 @@ export const Banner = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <motion.div
         variants={itemHeader}
         initial="hidden"
@@ -82,6 +82,6 @@ export const Banner = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

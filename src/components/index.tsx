@@ -3,3 +3,8 @@ export * from './Header';
 export * from './OutlinedButton';
 export * from './Banner';
 export * from './AboutMe';
+export * from './Projects';
+export * from './Project';
+export * from './Habilities';
+export * from './ContactMe';
+export * from './Footer';
