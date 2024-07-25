@@ -1,12 +1,19 @@
 import styles from "./styles.module.css";
-import { Button, OutlinedButton } from "..";
+import { Button, ContactModal, OutlinedButton } from "..";
 import logo from "../../assets/images/logo.svg";
 import arrow from "../../assets/images/arrow.svg";
 import { motion } from "framer-motion";
 import { anim, itemHeader } from "../../themes/animation";
+import { useState } from "react";
 
 export const Banner = () => {
-  
+
+  const [openModal,setOpen] = useState<boolean>(false);
+
+  const handleClick = () =>{
+    setOpen(!openModal);
+  }
+
   const transition = {
     duration: 1.5,
     ease: [0, 0.71, 0.2, 1.01],
@@ -17,6 +24,7 @@ export const Banner = () => {
 
   return (
     <section className={styles.container}>
+      <ContactModal isOpen={openModal} setOpen={handleClick}/>
       <motion.div
         variants={itemHeader}
         initial="hidden"
@@ -37,7 +45,7 @@ export const Banner = () => {
         />
       </motion.div>
 
-      <div className={styles.innerContainer}>
+      <div className={styles.innerContainer} id='oi'>
         <motion.div
           variants={anim}
           initial="hidden"
@@ -62,8 +70,8 @@ export const Banner = () => {
             <p style={{ color: "var(--purple)" }}>Front-End</p>
           </motion.div>
           <div className={styles.buttons}>
-            <Button text="Contate-me" type="reset" />
-            <OutlinedButton text="Projetos" type="button" />
+            <Button text="Contate-me" type="reset" onClick={handleClick}/>
+            <a href="#projects"><OutlinedButton text="Projetos" type="button" /></a>
           </div>
         </motion.div>
         <div className={styles.photo}>

@@ -39,7 +39,7 @@ export const ContactMe = () => {
   };
 
   return (
-    <section className={styles.cContainer}>
+    <section className={styles.cContainer} id='contact-me'>
       <div className={styles.form}>
         <h3>FALE COMIGO</h3>
         <form onSubmit={handleSubmit}>

@@ -2,6 +2,11 @@ import styles from "./styles.module.css";
 import logo from "../../assets/images/logo.svg";
 
 export const Footer = () => {
+
+  var whatsapp_number:number = 5511961499951;
+
+  var whatsapp_text:string = 'Olá%20preciso%20de%20um%20projeto!';
+
   const socialsIcons = [
     {
       alt: "github icon",
@@ -20,14 +25,14 @@ export const Footer = () => {
     {
       alt: "whatsapp icon",
       description: require("../../assets/images/whatsapp.svg").default,
-      href: ""
+      href: `https://wa.me/${whatsapp_number}?text=${whatsapp_text}`,
     },
   ];
 
   const links = [
-    { name: "Sobre Mim", href: "#AboutMe" },
-    { name: "Projetos", href: "#Projects" },
-    { name: "Contato", href: "#ContactMe" },
+    { name: "Sobre Mim", href: "#about-me" },
+    { name: "Projetos", href: "#projects" },
+    { name: "Contato", href: "#contact-me" },
   ];
 
   return (

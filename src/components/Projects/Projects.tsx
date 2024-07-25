@@ -30,7 +30,7 @@ export const Projects = () => {
   ]
 
   return (
-    <section className={styles.pContainer}>
+    <section className={styles.pContainer} id="projects">
       <div className={styles.title}>
         <div>
           <h1>Veja meus projetos</h1>
@@ -45,7 +45,7 @@ export const Projects = () => {
       </div>
       <div className={styles.projects}>
         {dataProject.map((item, id) => (
-          <Project id={id} item={item} />
+          <Project key={id} id={id} item={item} />
         ))}
       </div>
     </section>

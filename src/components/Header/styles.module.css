@@ -28,7 +28,7 @@ header{
 .innerHeader > div{
     display: flex;
     gap: 50px;
-    font-size: 18px;
+    font-size: 1.1rem;
     height: auto;
     align-items: center;
 }

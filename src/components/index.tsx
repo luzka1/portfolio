@@ -8,3 +8,4 @@ export * from './Project';
 export * from './Habilities';
 export * from './ContactMe';
 export * from './Footer';
+export * from './Modals';

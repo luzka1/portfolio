@@ -29,7 +29,7 @@ export const AboutMe = () => {
   ];
 
   return (
-    <section className={styles.abContainer}>
+    <section className={styles.abContainer} id='about-me'>
       <div className={styles.title}>
         <h1>Sobre mim</h1>
       </div>
@@ -58,7 +58,7 @@ export const AboutMe = () => {
         <div className={styles.right}>
           {itemsIcons.map((item, id) => (
             <div key={id}>
-              <img src={item.description} width={50} alt={item.alt} />
+              <img src={item.description} width={76} alt={item.alt} />
             </div>
           ))}
         </div>

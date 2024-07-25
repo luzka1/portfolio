@@ -27,7 +27,7 @@
 }
 
 .innerContainer p{
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: 600;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .innerContainer > div > div{
-    font-size: 96px;
+    font-size: 6rem;
     font-weight: 600;
 }
 

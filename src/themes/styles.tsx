@@ -21,6 +21,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     list-style:none;
     font-family: 'Space Grotesk', sans-serif;
     color:white;
+    scroll-behavior: smooth;
   }
   body{
     background-color: var(--background-color);  
@@ -32,27 +33,42 @@ export const GlobalStyles = createGlobalStyle<{}>`
     background-color: var(--footer-background);
     padding: 5rem 0;
     gap:20px;
-}
-  p{
-    font-size:24px;
-    letter-spacing:-1px;
   }
   .section-container{
     min-height:800px;
     background-color: var(--second-background);  
   }
+  
+  .background-modal{
+    position: fixed;
+    width:100%;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.5); ;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  a{
+    text-decoration:none;
+  }
+  p{
+    font-size:1.5rem;
+    letter-spacing:-1px;
+  }
 
   h1{
     text-transform: uppercase;
-    font-size: 92px;
+    font-size: 6rem;
     letter-spacing: -5px;
   }
-    h2{
-    font-size: 64px;
+  h2{
+    font-size: 4rem;
     letter-spacing: -2px;
   }
-    h3{
-    font-size: 48px;
+  h3{
+    font-size: 3rem;
     letter-spacing: -2px;
   }
 
@@ -65,7 +81,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     background: linear-gradient(0deg, rgba(189,0,255,1) -50%, rgba(255,0,153,1) 150%);
     border: none;
     border-radius: 50px;
-    font-size: 24px;
+    font-size: 1.5rem;
     box-shadow: 0 0 4px black;
     position: relative;
     padding: 3px;
@@ -83,7 +99,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     background: linear-gradient(0deg, rgba(189,0,255,1) -50%, rgba(255,0,153,1) 150%);
     border: none;
     border-radius: 50px;
-    font-size: 24px;
+    font-size: 1.5rem;
     box-shadow: 0 0 4px black;
     position: relative;
     overflow: hidden;
