@@ -2,6 +2,7 @@ import styles from "../Projects/styles.module.css";
 import doubleArrow from "../../assets/images/double-arrow.svg";
 import img from "../../assets/images/img-proj.svg";
 import { motion } from "framer-motion";
+import { useWindowSize } from "../../data";
 
 interface ProjectProps {
   id: number;
@@ -17,6 +18,8 @@ export const Project = ({ id, item }: ProjectProps) => {
   const handleClick = () => {
     return true;
   };
+
+  const { width } = useWindowSize();
 
   return (
     <motion.div
@@ -34,7 +37,11 @@ export const Project = ({ id, item }: ProjectProps) => {
           : { flexDirection: "row-reverse" }
       }
     >
-      <img src={img} alt="foto do projeto sony" />
+      <img
+        src={img}
+        width={width < 1024 ? "100%" : "50%"}
+        alt="foto do projeto sony"
+      />
       <div>
         <span>{item.name}</span>
         <p>{item.tiny_description}</p>

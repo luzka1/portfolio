@@ -5,7 +5,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 5rem;
-    
+    padding: 0 0 2rem 0;
 }
 
 .abContainer h2{
@@ -33,6 +33,7 @@
     align-items: center;
     justify-content: space-around;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .btn{
@@ -63,14 +64,13 @@
 @media (max-width:1024px){
     .abContainer{
         gap: 1rem;
+        
     }
     .innerAbContainer{
         display: flex;
-        flex-direction: column;
         gap: 50px;
     }
     .itens{
-        flex-direction: column;
         gap: 25px;
     }
     .btn{
