@@ -43,6 +43,7 @@ export const AboutMe = () => {
           ease: [0, 0.71, 0.2, 1.01],
           delay: 0,
         }}
+        viewport={{ once: true }}
         className={styles.innerAbContainer}
       >
         <div className={styles.left}>

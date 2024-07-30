@@ -92,10 +92,6 @@ export const GlobalStyles = createGlobalStyle<{}>`
     transition: all 200ms ease;
 }
 
-.principalButton:hover, .outlinedButton:hover {
-    transform:scale(110%);
-}
-
   .outlinedButton {
     display:flex;
     align-items:center;
@@ -134,16 +130,8 @@ export const GlobalStyles = createGlobalStyle<{}>`
     border-radius: 50px; 
   }
 
-    @keyframes color {
-    0%{
-        background-position: 0% 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
+  .principalButton:hover, .outlinedButton:hover {
+    transform:scale(110%);
 }
 
   @media (max-width:1024px){
@@ -164,6 +152,16 @@ export const GlobalStyles = createGlobalStyle<{}>`
     footer{
     padding: 3rem 0;
   }
+     .principalButton {
+    width: 175px;
+    height: 50px;
+    font-size: 1rem;
+}
+    .outlinedButton {
+    min-width: 175px;
+    height: 50px;
+    font-size: 1rem;
+}
     
   }
 `;
