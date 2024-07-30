@@ -45,7 +45,7 @@ export const Banner = () => {
         />
       </motion.div>
 
-      <div className={styles.innerContainer} id='oi'>
+      <div className={styles.innerContainer}>
         <motion.div
           variants={anim}
           initial="hidden"

@@ -18,7 +18,6 @@ export const Home = () => {
       <div className="section-container">
         <Habilities />
       </div>
-      <ContactMe />
       <Footer />
     </div>
   );

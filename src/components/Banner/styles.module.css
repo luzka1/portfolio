@@ -68,3 +68,42 @@
     height: 300px;
 }
 
+@media (max-width:1024px) {
+    .container{
+        height: auto;
+        padding-top: 15vh;
+    }
+
+    .innerContainer{
+        gap: 40px;
+        flex-direction: column-reverse;
+    }
+
+    .innerContainer p{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .innerContainer > div > div{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    .photo div{
+        width: 300px;
+        height: 300px;
+    }
+
+    .photo div img {
+        height: 150px;
+    }
+
+    .buttons{
+        gap: 20px;
+    }
+
+    .indicationDown{
+        display: none;
+    }
+
+}

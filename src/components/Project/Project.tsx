@@ -1,6 +1,7 @@
 import styles from "../Projects/styles.module.css";
 import doubleArrow from "../../assets/images/double-arrow.svg";
 import img from "../../assets/images/img-proj.svg";
+import { motion } from "framer-motion";
 
 interface ProjectProps {
   id: number;
@@ -13,13 +14,19 @@ interface ProjectProps {
 }
 
 export const Project = ({ id, item }: ProjectProps) => {
-  const handleClick = () =>{
-    
-    return true
-  }
+  const handleClick = () => {
+    return true;
+  };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: 200 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{
+        duration: 1.5,
+        ease: [0, 0.71, 0.2, 1.01],
+        delay: 0,
+      }}
       className={styles.project}
       style={
         id % 2 === 0
@@ -35,6 +42,6 @@ export const Project = ({ id, item }: ProjectProps) => {
           Ver mais sobre <img src={doubleArrow} alt="" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };

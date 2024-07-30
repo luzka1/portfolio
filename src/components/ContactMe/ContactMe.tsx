@@ -2,6 +2,8 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import { Button } from "..";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
+import { modalAnimation } from "../../themes";
 
 export const ContactMe = () => {
   const [email, setEmail] = useState<string>("");
@@ -40,7 +42,10 @@ export const ContactMe = () => {
 
   return (
     <section className={styles.cContainer} id='contact-me'>
-      <div className={styles.form}>
+      <motion.div className={styles.form}
+      variants={modalAnimation}
+      initial="hidden"
+      whileInView="visible">
         <h3>FALE COMIGO</h3>
         <form onSubmit={handleSubmit}>
           <div>
@@ -74,7 +79,7 @@ export const ContactMe = () => {
           </div>
           <Button type="submit" text="Enviar" />
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };

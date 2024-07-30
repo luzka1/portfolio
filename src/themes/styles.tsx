@@ -72,10 +72,10 @@ export const GlobalStyles = createGlobalStyle<{}>`
     letter-spacing: -2px;
   }
 
-  .principalButton{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  .principalButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 225px;
     height: 60px;
     background: linear-gradient(0deg, rgba(189,0,255,1) -50%, rgba(255,0,153,1) 150%);
@@ -86,9 +86,15 @@ export const GlobalStyles = createGlobalStyle<{}>`
     position: relative;
     padding: 3px;
     overflow: hidden;
-    font-weight:400;
+    font-weight: 400;
     cursor: pointer;
-  }
+    background-position: 0%;
+    transition: all 200ms ease;
+}
+
+.principalButton:hover, .outlinedButton:hover {
+    transform:scale(110%);
+}
 
   .outlinedButton {
     display:flex;
@@ -105,6 +111,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     overflow: hidden;
     font-weight:400;
     cursor: pointer;
+    transition: all 200ms ease;
   }
   
   .outlinedButton::before {
@@ -126,4 +133,16 @@ export const GlobalStyles = createGlobalStyle<{}>`
     background: transparent; 
     border-radius: 50px; 
   }
+
+    @keyframes color {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
 `;

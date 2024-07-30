@@ -1,5 +1,6 @@
 import styles from "./styles.module.css";
-import { Button } from '..';
+import { Button } from "..";
+import { motion } from "framer-motion";
 
 export const Habilities = () => {
   const text =
@@ -36,19 +37,31 @@ export const Habilities = () => {
     },
   ];
 
-  const handleClick = () =>{
-    window.open('https://www.linkedin.com/in/lucas-santos-341856247/', '_blank')
-  }
+  const handleClick = () => {
+    window.open(
+      "https://www.linkedin.com/in/lucas-santos-341856247/",
+      "_blank"
+    );
+  };
 
   return (
     <section className={styles.hContainer}>
       <div className={styles.title}>
         <h1>Habilidades</h1>
       </div>
-      <div className={styles.innerHContainer}>
+      <motion.div
+        className={styles.innerHContainer}
+        initial={{ opacity: 0, x: 200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 1.5,
+          ease: [0, 0.71, 0.2, 1.01],
+          delay: 0,
+        }}
+      >
         <div>
           <p>{text}</p>
-          <Button text="Linkedin" type="button" onClick={handleClick}/>
+          <Button text="Linkedin" type="button" onClick={handleClick} />
         </div>
         <div className={styles.allIcons}>
           {itemsIcons.map((item, id) => (
@@ -68,7 +81,7 @@ export const Habilities = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

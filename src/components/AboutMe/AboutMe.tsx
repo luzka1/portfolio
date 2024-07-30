@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
 import styles from "./styles.module.css";
 
 export const AboutMe = () => {
-  const text = "Lorem ipsum dolor sit met, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim. Etiam porttitor commodo eros, sed rhoncus enim eleifend quis. Aenean eu nisi sit amet ligula porttitor imperdiet et ac nibh. In imperdiet, nunc et bibendum egestas, mauris ante vestibulum purus, et luctus nisl arcu quis purus. Nullam vehicula hendrerit feugiat. Integer efficitur sagittis luctus. Vivamus viverra eget orci quis tristique. In hac habitasse platea dictumst. Ut eleifend dui in volutpat condimentum";
+  const text =
+    "Lorem ipsum dolor sit met, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim. Etiam porttitor commodo eros, sed rhoncus enim eleifend quis. Aenean eu nisi sit amet ligula porttitor imperdiet et ac nibh. In imperdiet, nunc et bibendum egestas, mauris ante vestibulum purus, et luctus nisl arcu quis purus. Nullam vehicula hendrerit feugiat. Integer efficitur sagittis luctus. Vivamus viverra eget orci quis tristique. In hac habitasse platea dictumst. Ut eleifend dui in volutpat condimentum";
 
   const itemsExp = [
     { id: 1, description: "Anos de experiência" },
@@ -29,11 +31,20 @@ export const AboutMe = () => {
   ];
 
   return (
-    <section className={styles.abContainer} id='about-me'>
+    <section className={styles.abContainer} id="about-me">
       <div className={styles.title}>
         <h1>Sobre mim</h1>
       </div>
-      <div className={styles.innerAbContainer}>
+      <motion.div
+        initial={{ opacity: 0, x: 150 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 1.5,
+          ease: [0, 0.71, 0.2, 1.01],
+          delay: 0,
+        }}
+        className={styles.innerAbContainer}
+      >
         <div className={styles.left}>
           <div>
             <h2>
@@ -42,9 +53,7 @@ export const AboutMe = () => {
             </h2>
           </div>
           <div>
-            <p>
-             {text}
-            </p>
+            <p>{text}</p>
           </div>
           <div>
             {itemsExp.map((item, id) => (
@@ -62,7 +71,7 @@ export const AboutMe = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

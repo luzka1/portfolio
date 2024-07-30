@@ -5,6 +5,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 5rem;
+    overflow-x:hidden;
 }
 
 .abContainer h2{
