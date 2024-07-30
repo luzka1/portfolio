@@ -58,3 +58,26 @@
     resize: none;
 }
 
+@media (max-width:1024px){
+    .modal{
+        padding: 2rem;
+        max-width: 70vw;
+        height: auto;
+    }
+
+    .icon img {
+        width: 25px;
+    }
+    
+    .copyBoard div{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .copyBoard input{
+        font-size: 1rem;
+    }
+}

@@ -55,7 +55,7 @@ export const AboutMe = () => {
           <div>
             <p>{text}</p>
           </div>
-          <div>
+          <div className={styles.itens}>
             {itemsExp.map((item, id) => (
               <div className={`outlinedButton ${styles.btn}`} key={id}>
                 <span>+{item.id}</span>

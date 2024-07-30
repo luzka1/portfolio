@@ -145,4 +145,25 @@ export const GlobalStyles = createGlobalStyle<{}>`
         background-position: 0% 50%;
     }
 }
+
+  @media (max-width:1024px){
+      h1{
+    font-size: 3rem;
+    letter-spacing: -3px;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  h3{
+    font-size: 1.5rem;
+  }
+    p{
+    font-size: 1rem;
+    }
+    
+    footer{
+    padding: 3rem 0;
+  }
+    
+  }
 `;

@@ -40,5 +40,16 @@
     align-items: center;
 }
 
+@media (max-width:1024px){
+    .form{
+        max-width: 90%;
+        height: 100%;
+    }
+    .form input,textarea{
+        width: 80%;
+        min-height: 40px;
+        font-size: 1rem;
+    }
+}
 
 

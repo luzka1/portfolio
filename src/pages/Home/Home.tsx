@@ -8,7 +8,7 @@ export const Home = () => {
     scrollToTop();
   },[])
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "160px" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "100px" }}>
       <Header />
       <Banner />
       <div className="section-container">
@@ -18,6 +18,7 @@ export const Home = () => {
       <div className="section-container">
         <Habilities />
       </div>
+      <ContactMe />
       <Footer />
     </div>
   );

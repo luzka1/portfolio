@@ -5,7 +5,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 5rem;
-    overflow-x:hidden;
+    
 }
 
 .abContainer h2{
@@ -28,7 +28,7 @@
     gap: 50px;
 }
 
-.innerAbContainer > div :nth-child(3){
+.itens{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -58,4 +58,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+@media (max-width:1024px){
+    .abContainer{
+        gap: 1rem;
+    }
+    .innerAbContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .itens{
+        flex-direction: column;
+        gap: 25px;
+    }
+    .btn{
+        width: 300px;
+        padding: 15px;
+        display: flex;
+    }
+    .btn span{
+        padding:0px 20px;
+    }
+    .btn span:nth-child(1){
+        font-size: 2rem;
+        padding: 0;
+    }
+    .right{
+        display: none;
+    }
 }

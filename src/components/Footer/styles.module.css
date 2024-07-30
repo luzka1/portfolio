@@ -1,17 +1,17 @@
-.navSocials{
+.navSocials {
     display: flex;
     width: 30%;
     justify-content: space-around;
 }
 
-.navLinks{
+.navLinks {
     display: flex;
     padding: 0.5rem;
     width: 30%;
     justify-content: space-around;
 }
 
-.icon img{
+.icon img {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,30 @@
     padding: 0.5rem;
 }
 
-.dev{
+.dev {
     text-align: center;
     color: var(--footer-white);
+}
+
+@media (max-width: 1024px) {
+    .navSocials {
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    .navLinks {
+        display: flex;
+        padding: 0.5rem;
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    .icon img {
+        width: 20px;
+    }
+
+    .dev {
+        width: 60%;
+    }
 }
