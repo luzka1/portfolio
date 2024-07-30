@@ -71,11 +71,10 @@
 @media (max-width:1024px) {
     .container{
         height: auto;
-        padding-top: 15vh;
     }
 
     .innerContainer{
-        gap: 41px;
+        gap: 40px;
         flex-direction: column-reverse;
     }
 
@@ -90,6 +89,7 @@
     }
 
     .photo div{
+        margin-top: 15vh;
         width: 300px;
         height: 300px;
     }
