@@ -9,23 +9,23 @@ function App() {
   return (
     <div>
       <ToastContainer
-          position="top-right"
-          autoClose={2500}
-          hideProgressBar={false}
-          newestOnTop={true}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
-        <BrowserRouter>
-          <AppProvider>
-            <GlobalStyles />
-            <Rotas />
-          </AppProvider>
-        </BrowserRouter>
+        position="top-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <BrowserRouter>
+        <AppProvider>
+          <GlobalStyles />
+          <Rotas />
+        </AppProvider>
+      </BrowserRouter>
     </div>
   );
 }

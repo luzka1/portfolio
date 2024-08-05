@@ -1,33 +1,16 @@
 import styles from "./styles.module.css";
 import { Button, Project } from "..";
+import { useNavigate } from "react-router-dom";
+import useAppContext from "../../data/hooks/useAppContext";
 
 export const Projects = () => {
+  const navigate = useNavigate();
+  const { dataProject } = useAppContext();
   const ButtonClick = () => {
-    return true;
+    navigate("/projects");
   };
 
-  var buttonValid : boolean = false;
-
-  const dataProject = [
-    {
-      img: require('../../assets/images/img-proj.svg'),
-      name: 'Proj Sony',
-      tiny_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim.  ',
-      full_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim.  '
-    },
-    {
-      img: require('../../assets/images/img-proj.svg'),
-      name: 'Proj Sony',
-      tiny_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim.  ',
-      full_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim.  '
-    },
-    {
-      img: require('../../assets/images/img-proj.svg'),
-      name: 'Proj Sony',
-      tiny_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim.  ',
-      full_description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim.  '
-    },
-  ]
+  var buttonValid: boolean = false;
 
   return (
     <section className={styles.pContainer} id="projects">
@@ -41,10 +24,12 @@ export const Projects = () => {
             </p>
           </span>
         </div>
-        {!buttonValid ? <Button text="Ver todos" type="button" onClick={ButtonClick} /> : null}
+        {!buttonValid ? (
+          <Button text="Ver todos" type="button" onClick={ButtonClick} />
+        ) : null}
       </div>
       <div className={styles.projects}>
-        {dataProject.map((item, id) => (
+        {dataProject.slice(0,3).map((item, id) => (
           <Project key={id} id={id} item={item} />
         ))}
       </div>

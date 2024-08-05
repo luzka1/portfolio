@@ -43,7 +43,7 @@ export const Footer = () => {
       <nav className={styles.navSocials}>
         {socialsIcons.map((item, id) => (
           <div key={id} className={styles.icon}>
-            <a href={item.href}><img src={item.description} width={35} alt={item.alt} /></a>
+            <a href={item.href}><img src={item.description} width={35} height={35} alt={item.alt} /></a>
           </div>
         ))}
       </nav>

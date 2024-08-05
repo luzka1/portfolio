@@ -1,5 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { Home } from "../pages";
+import { Home, ProjectsPage, Error, ProjectPage } from "../pages";
+
 
 export const Rotas = () => {
   const location = useLocation();
@@ -11,6 +12,9 @@ export const Rotas = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/project/:id" element={<ProjectPage />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );

@@ -3,6 +3,7 @@ import doubleArrow from "../../assets/images/double-arrow.svg";
 import img from "../../assets/images/img-proj.svg";
 import { motion } from "framer-motion";
 import { useWindowSize } from "../../data";
+import { useNavigate } from "react-router-dom";
 
 interface ProjectProps {
   id: number;
@@ -15,8 +16,10 @@ interface ProjectProps {
 }
 
 export const Project = ({ id, item }: ProjectProps) => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    return true;
+    navigate(`/project/${item.name}`);
   };
 
   const { width } = useWindowSize();

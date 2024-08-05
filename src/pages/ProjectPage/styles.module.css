@@ -1,0 +1,43 @@
+.sectionProject{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tecs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icons{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}

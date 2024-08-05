@@ -68,7 +68,7 @@ export const AboutMe = () => {
         <div className={styles.right}>
           {itemsIcons.map((item, id) => (
             <div key={id}>
-              <img src={item.description} width={76} alt={item.alt} />
+              <img src={item.description} width={76} height={76} alt={item.alt} />
             </div>
           ))}
         </div>
