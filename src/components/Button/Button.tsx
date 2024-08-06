@@ -1,6 +1,6 @@
 
 interface ButtonProps {
-  text: string;
+  text?: string;
   type?: "submit" | "reset" | "button" | undefined;
   onClick?: (e: any) => void;
 }

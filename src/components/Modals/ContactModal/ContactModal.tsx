@@ -4,6 +4,7 @@ import copy from "../../../assets/images/copy.svg";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import { modalAnimation } from "../../../themes";
+import useTextsContext from "../../../data/hooks/useTextsContext";
 
 interface IModalProps {
   isOpen: boolean;
@@ -39,6 +40,7 @@ const socialsIcons = [
 ];
 
 export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
+  const { data } = useTextsContext();
   if (!isOpen) {
     return null;
   }
@@ -61,7 +63,7 @@ export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
         animate="visible"
       >
         <div>
-          <h3>FALE COMIGO</h3>
+          <h3>{data.section4.text}</h3>
           <div onClick={setOpen}>
             <img src={close} alt="close button" style={{ cursor: "pointer" }} />
           </div>
@@ -76,7 +78,7 @@ export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
           ))}
         </nav>
         <div className={styles.copyBoard}>
-          <p>Meu E-mail para contato</p>
+          <p>{data.section4.text}</p>
           <div>
             <input readOnly placeholder={email} value={email} type="email" />
             <img src={copy} alt="copy button" onClick={copyToClipboard} />

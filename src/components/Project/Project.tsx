@@ -4,6 +4,7 @@ import img from "../../assets/images/img-proj.svg";
 import { motion } from "framer-motion";
 import { useWindowSize } from "../../data";
 import { useNavigate } from "react-router-dom";
+import useTextsContext from "../../data/hooks/useTextsContext";
 
 interface ProjectProps {
   id: number;
@@ -17,6 +18,7 @@ interface ProjectProps {
 
 export const Project = ({ id, item }: ProjectProps) => {
   const navigate = useNavigate();
+  const { data } = useTextsContext();
 
   const handleClick = () => {
     navigate(`/project/${item.name}`);
@@ -49,7 +51,7 @@ export const Project = ({ id, item }: ProjectProps) => {
         <span>{item.name}</span>
         <p>{item.tiny_description}</p>
         <button onClick={handleClick}>
-          Ver mais sobre <img src={doubleArrow} alt="" />
+          {data.section2.buttons} <img src={doubleArrow} alt="" />
         </button>
       </div>
     </motion.div>

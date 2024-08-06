@@ -1,5 +1,7 @@
 import styles from "./styles.module.css";
 import logo from "../../assets/images/logo.svg";
+import useTextsContext from "../../data/hooks/useTextsContext";
+import { useNavigate } from "react-router-dom";
 
 var whatsapp_number:number = 5511961499951;
 
@@ -34,6 +36,19 @@ const links = [
 ];
 
 export const Footer = () => {
+  const { data } = useTextsContext();
+  const navigate = useNavigate();
+
+  const handleScrollToSection = (section: string) => {
+    navigate("/");
+
+    setTimeout(() => {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
 
 
   return (
@@ -49,15 +64,18 @@ export const Footer = () => {
         ))}
       </nav>
       <nav className={styles.navLinks}>
-        {links.map((item, id) => (
-          <a key={id} href={item.href}>
-            {item.name}
-          </a>
-        ))}
+        {data.footer.texts.map((item, id) => (
+            <button
+              key={id}
+              onClick={() => handleScrollToSection(item.linkTo)}
+              type="button"
+            >
+              {item.name}
+            </button>
+          ))}
       </nav>
       <div className={styles.dev}>
-        Desenvolvido por lucasgsantos1727@gmail.com <br /> 2024 © Todos os
-        direitos reservados.
+        {data.footer.rights}
       </div>
     </footer>
   );

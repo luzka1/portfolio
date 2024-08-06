@@ -6,6 +6,7 @@ import { Header, Footer, Button, OutlinedButton } from "../../components";
 import { scrollToTop } from "../../themes";
 import styles from "./styles.module.css";
 import { useWindowSize } from "../../data";
+import useTextsContext from "../../data/hooks/useTextsContext";
 
 const itemsIcons = [
   {
@@ -27,6 +28,7 @@ export const ProjectPage = () => {
   const { dataProject } = useAppContext();
   const proj = dataProject.find((idProj) => idProj.name === id);
   const { width } = useWindowSize();
+  const {data} = useTextsContext();
 
   useEffect(() => {
     scrollToTop();
@@ -49,7 +51,7 @@ export const ProjectPage = () => {
         </div>
         <div className={styles.description}>
           <div className={styles.title}>
-            <h3>DESCRIÇÃO</h3>
+            <h3>{data.projectPage.title}</h3>
           </div>
           <div className={styles.details}>
             <p>{proj?.full_description}</p>
@@ -63,7 +65,7 @@ export const ProjectPage = () => {
         </div>
         <div className={styles.tecs}>
           <div className={styles.title}>
-            <h3>TECNOLOGIAS UTILIZADAS</h3>
+            <h3>{data.projectPage.subtitle}</h3>
           </div>
           <div className={styles.icons}>
             {itemsIcons.map((item, id) => (

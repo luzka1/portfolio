@@ -3,9 +3,11 @@ import { Footer, Header, Project, Projects } from "../../components";
 import { scrollToTop } from "../../themes";
 import styles from "./styles.module.css";
 import useAppContext from "../../data/hooks/useAppContext";
+import useTextsContext from "../../data/hooks/useTextsContext";
 
 export const ProjectsPage = () => {
   const { dataProject } = useAppContext();
+  const {data} = useTextsContext();
 
   useEffect(() => {
     scrollToTop();
@@ -18,12 +20,9 @@ export const ProjectsPage = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.title}>
-          <h1>Todos os projetos</h1>
+          <h1>{data.projectsPage.title}</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-            provident nihil natus quasi cupiditate a, nisi sequi illum delectus
-            rem, ipsa nemo quos tenetur similique ex quod alias architecto
-            dicta!
+            {data.projectsPage.subtitle}
           </p>
         </div>
         <div className={styles.projects}>

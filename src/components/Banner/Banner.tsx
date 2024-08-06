@@ -5,14 +5,15 @@ import arrow from "../../assets/images/arrow.svg";
 import { motion } from "framer-motion";
 import { anim, itemHeader } from "../../themes/animation";
 import { useState } from "react";
+import useTextsContext from "../../data/hooks/useTextsContext";
 
 export const Banner = () => {
+  const [openModal, setOpen] = useState<boolean>(false);
+  const { data } = useTextsContext();
 
-  const [openModal,setOpen] = useState<boolean>(false);
-
-  const handleClick = () =>{
+  const handleClick = () => {
     setOpen(!openModal);
-  }
+  };
 
   const transition = {
     duration: 1.5,
@@ -24,7 +25,7 @@ export const Banner = () => {
 
   return (
     <section className={styles.container}>
-      <ContactModal isOpen={openModal} setOpen={handleClick}/>
+      <ContactModal isOpen={openModal} setOpen={handleClick} />
       <motion.div
         variants={itemHeader}
         initial="hidden"
@@ -32,7 +33,7 @@ export const Banner = () => {
         transition={transition}
         className={styles.indicationDown}
       >
-        <p>Role para baixo</p>
+        <p>{data.banner.scroll}</p>
         <motion.img
           animate={{ y: [0, -20, 0] }}
           transition={{
@@ -66,12 +67,29 @@ export const Banner = () => {
             animate="visible"
             transition={transition}
           >
-            <p style={{ color: "var(--pink)" }}>Desenvolvedor Web</p>
-            <p style={{ color: "var(--purple)" }}>Front-End</p>
+            {data.banner.subtitle.map((item, id) => (
+              <p
+                key={id}
+                style={
+                  id === 0
+                    ? { color: "var(--pink)" }
+                    : { color: "var(--purple)" }
+                }
+              >
+                {item}
+              </p>
+            ))}
           </motion.div>
           <div className={styles.buttons}>
-            <Button text="Contate-me" type="reset" onClick={handleClick}/>
-            <a href="#projects"><OutlinedButton text="Projetos" type="button" /></a>
+            {data.banner.buttons.map((item, id) =>
+              id === 0 ? (
+                <Button key={id} text={item} type="reset" onClick={handleClick} />
+              ) : (
+                <a href="#projects">
+                  <OutlinedButton key={id} text={item} type="button" />
+                </a>
+              )
+            )}
           </div>
         </motion.div>
         <div className={styles.photo}>

@@ -5,21 +5,8 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import brasil from "../../assets/images/brasil.svg";
 import eu from "../../assets/images/united-states.svg";
-
-const linksHeader = [
-  {
-    name: "Sobre Mim",
-    linkTo: "about-me",
-  },
-  {
-    name: "Projetos",
-    linkTo: "projects",
-  },
-  {
-    name: "Contato",
-    linkTo: "contact-me",
-  },
-];
+import useTextsContext from "../../data/hooks/useTextsContext";
+import { dataEn, dataPtBr } from "../../data/langs";
 
 const languages = [
   {
@@ -29,7 +16,7 @@ const languages = [
   {
     lang: "EN-US",
     photo: eu,
-  }
+  },
 ];
 
 export const Header = () => {
@@ -37,6 +24,7 @@ export const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+  const { data, setData } = useTextsContext();
 
   const toHomePage = () => {
     navigate("/");
@@ -62,6 +50,17 @@ export const Header = () => {
   const handleLanguageSelect = (language: (typeof languages)[number]) => {
     setSelectedLanguage(language);
     setMenuIsOpen(false);
+
+    switch (language.lang) {
+      case "PT-BR":
+        setData(dataPtBr);
+        break;
+      case "EN-US":
+        setData(dataEn);
+        break;
+      default:
+        return;
+    }
   };
 
   return (
@@ -72,7 +71,7 @@ export const Header = () => {
           &#9776;
         </button>
         <div>
-          {linksHeader.map((item, id) => (
+          {data.header.texts.map((item, id) => (
             <button
               key={id}
               onClick={() => handleScrollToSection(item.linkTo)}

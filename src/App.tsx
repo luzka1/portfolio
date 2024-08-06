@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from "./data";
 import "react-toastify/dist/ReactToastify.css";
+import { TextsContextProvider } from "./data/TextsContext";
 
 function App() {
   return (
@@ -22,8 +23,10 @@ function App() {
       />
       <BrowserRouter>
         <AppProvider>
+          <TextsContextProvider>
             <GlobalStyles />
             <Rotas />
+          </TextsContextProvider>
         </AppProvider>
       </BrowserRouter>
     </div>

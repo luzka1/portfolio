@@ -4,8 +4,10 @@ import { Button } from "..";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import { modalAnimation } from "../../themes";
+import useTextsContext from "../../data/hooks/useTextsContext";
 
 export const ContactMe = () => {
+  const { data } = useTextsContext();
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -46,13 +48,13 @@ export const ContactMe = () => {
       variants={modalAnimation}
       initial="hidden"
       whileInView="visible">
-        <h3>FALE COMIGO</h3>
+        <h3>{data.section4.title}</h3>
         <form onSubmit={handleSubmit}>
           <div>
             <input
               type="email"
               id="email"
-              placeholder="E-mail"
+              placeholder={data.section4.email}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -62,7 +64,7 @@ export const ContactMe = () => {
             <input
               type="text"
               id="subject"
-              placeholder="Assunto"
+              placeholder={data.section4.subject}
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               required
@@ -71,13 +73,13 @@ export const ContactMe = () => {
           <div>
             <textarea
               id="message"
-              placeholder="Escreva sua mensagem..."
+              placeholder={data.section4.message}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
           </div>
-          <Button type="submit" text="Enviar" />
+          <Button type="submit" text={data.section4.button}/>
         </form>
       </motion.div>
     </section>

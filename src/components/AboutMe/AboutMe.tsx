@@ -1,14 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./styles.module.css";
-
-const text =
-  "Lorem ipsum dolor sit met, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim. Etiam porttitor commodo eros, sed rhoncus enim eleifend quis. Aenean eu nisi sit amet ligula porttitor imperdiet et ac nibh. In imperdiet, nunc et bibendum egestas, mauris ante vestibulum purus, et luctus nisl arcu quis purus. Nullam vehicula hendrerit feugiat. Integer efficitur sagittis luctus. Vivamus viverra eget orci quis tristique. In hac habitasse platea dictumst. Ut eleifend dui in volutpat condimentum";
-
-const itemsExp = [
-  { id: 1, description: "Anos de experiência" },
-  { id: 5, description: "Cursos completos" },
-  { id: 5, description: "Projetos" },
-];
+import useTextsContext from "../../data/hooks/useTextsContext";
 
 const itemsIcons = [
   {
@@ -30,11 +22,12 @@ const itemsIcons = [
 ];
 
 export const AboutMe = () => {
+  const {data} = useTextsContext();
 
   return (
     <section className={styles.abContainer} id="about-me">
       <div className={styles.title}>
-        <h1>Sobre mim</h1>
+        <h1>{data.section1.title}</h1>
       </div>
       <motion.div
         initial={{ opacity: 0, x: 150 }}
@@ -50,15 +43,14 @@ export const AboutMe = () => {
         <div className={styles.left}>
           <div>
             <h2>
-              Olá, me chamo <br />
-              Lucas Gabriel dos Santos
+              {data.section1.subtitle}
             </h2>
           </div>
           <div>
-            <p>{text}</p>
+            <p>{data.section1.text}</p>
           </div>
           <div className={styles.itens}>
-            {itemsExp.map((item, id) => (
+            {data.section1.itemsExp?.map((item, id) => (
               <div className={`outlinedButton ${styles.btn}`} key={id}>
                 <span>+{item.id}</span>
                 <span>{item.description}</span>
