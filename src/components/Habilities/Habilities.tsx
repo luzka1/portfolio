@@ -2,40 +2,41 @@ import styles from "./styles.module.css";
 import { Button } from "..";
 import { motion } from "framer-motion";
 
-export const Habilities = () => {
-  const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim. Etiam porttitor commodo eros, sed rhoncus enim eleifend quis. Aenean eu nisi sit amet ligula porttitor imperdiet et ac nibh. In imperdiet, nunc et bibendum egestas, mauris ante vestibulum purus, et luctus nisl arcu quis purus. Nullam vehicula hendrerit feugiat. Integer efficitur sagittis luctus. Vivamus viverra eget orci quis tristique. In hac habitasse platea dictumst. Ut eleifend dui in volutpat condimentum";
+const text =
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt iaculis lectus vel consectetur. Morbi ac ultrices orci, id blandit enim. Etiam porttitor commodo eros, sed rhoncus enim eleifend quis. Aenean eu nisi sit amet ligula porttitor imperdiet et ac nibh. In imperdiet, nunc et bibendum egestas, mauris ante vestibulum purus, et luctus nisl arcu quis purus. Nullam vehicula hendrerit feugiat. Integer efficitur sagittis luctus. Vivamus viverra eget orci quis tristique. In hac habitasse platea dictumst. Ut eleifend dui in volutpat condimentum";
 
-  const itemsIcons = [
-    {
-      name: "NextJs",
-      alt: "next icon",
-      description: require("../../assets/images/next.svg").default,
-      color: "#000000",
-      percent: "80%",
-    },
-    {
-      name: "JavaScript",
-      alt: "javascript icon",
-      description: require("../../assets/images/js.svg").default,
-      color: "#F7DF1E",
-      percent: "80%",
-    },
-    {
-      name: "React",
-      alt: "react icon",
-      description: require("../../assets/images/react.svg").default,
-      color: "#00D8FF",
-      percent: "80%",
-    },
-    {
-      name: "Figma",
-      alt: "figma icon",
-      description: require("../../assets/images/figma.svg").default,
-      color: "#FF7262",
-      percent: "80%",
-    },
-  ];
+const itemsIcons = [
+{
+  name: "NextJs",
+  alt: "next icon",
+  description: require("../../assets/images/next.svg").default,
+  color: "#000000",
+  percent: "80%",
+},
+{
+  name: "JavaScript",
+  alt: "javascript icon",
+  description: require("../../assets/images/js.svg").default,
+  color: "#F7DF1E",
+  percent: "80%",
+},
+{
+  name: "React",
+  alt: "react icon",
+  description: require("../../assets/images/react.svg").default,
+  color: "#00D8FF",
+  percent: "80%",
+},
+{
+  name: "Figma",
+  alt: "figma icon",
+  description: require("../../assets/images/figma.svg").default,
+  color: "#FF7262",
+  percent: "80%",
+},
+];
+
+export const Habilities = () => {
 
   const handleClick = () => {
     window.open(

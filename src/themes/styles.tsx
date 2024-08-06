@@ -150,7 +150,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     }
     
     footer{
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
      .principalButton {
     width: 175px;

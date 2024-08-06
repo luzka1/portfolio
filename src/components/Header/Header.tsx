@@ -1,14 +1,42 @@
 import styles from "./styles.module.css";
 import logo from "../../assets/images/logo.svg";
-import brasil from "../../assets/images/brasil.svg";
-import arrow from "../../assets/images/arrow.svg";
 import close from "../../assets/images/close.svg";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import brasil from "../../assets/images/brasil.svg";
+import eu from "../../assets/images/united-states.svg";
+
+const linksHeader = [
+  {
+    name: "Sobre Mim",
+    linkTo: "about-me",
+  },
+  {
+    name: "Projetos",
+    linkTo: "projects",
+  },
+  {
+    name: "Contato",
+    linkTo: "contact-me",
+  },
+];
+
+const languages = [
+  {
+    lang: "PT-BR",
+    photo: brasil,
+  },
+  {
+    lang: "EN-US",
+    photo: eu,
+  }
+];
 
 export const Header = () => {
   const navigate = useNavigate();
   const headerRef = useRef<HTMLElement>(null);
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   const toHomePage = () => {
     navigate("/");
@@ -20,20 +48,22 @@ export const Header = () => {
     }
   };
 
-  const linksHeader = [
-    {
-      name: "Sobre Mim",
-      linkTo: "#about-me",
-    },
-    {
-      name: "Projetos",
-      linkTo: "#projects",
-    },
-    {
-      name: "Contato",
-      linkTo: "#contact-me",
-    },
-  ];
+  const handleScrollToSection = (section: string) => {
+    navigate("/");
+
+    setTimeout(() => {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  const handleLanguageSelect = (language: (typeof languages)[number]) => {
+    setSelectedLanguage(language);
+    setMenuIsOpen(false);
+  };
+
   return (
     <header ref={headerRef}>
       <div className={styles.innerHeader}>
@@ -43,14 +73,38 @@ export const Header = () => {
         </button>
         <div>
           {linksHeader.map((item, id) => (
-            <a key={id} href={item.linkTo}>
+            <button
+              key={id}
+              onClick={() => handleScrollToSection(item.linkTo)}
+              type="button"
+            >
               {item.name}
-            </a>
+            </button>
           ))}
-          <div>
-            <img src={brasil} alt="bandeira do brasil" />
-            <span>PT-BR</span>
-            <img src={arrow} alt="seta" />
+          <div className={styles.menuLanguage}>
+            <div className={styles.innerMenuLanguage}>
+              <div onClick={() => setMenuIsOpen(!menuIsOpen)}>
+                <img src={selectedLanguage.photo} alt={selectedLanguage.lang} />
+                <span>{selectedLanguage.lang}</span>
+              </div>
+              {menuIsOpen && (
+                <>
+                  {languages
+                    .filter(
+                      (language) => language.lang !== selectedLanguage.lang
+                    )
+                    .map((language, index) => (
+                      <div
+                        key={index}
+                        onClick={() => handleLanguageSelect(language)}
+                      >
+                        <img src={language.photo} alt={language.lang} />
+                        <span>{language.lang}</span>
+                      </div>
+                    ))}
+                </>
+              )}
+            </div>
           </div>
           <button className={styles.btnHeaderClose} onClick={showHeader}>
             <img src={close} alt="close button" />

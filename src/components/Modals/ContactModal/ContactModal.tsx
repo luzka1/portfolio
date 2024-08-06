@@ -10,16 +10,38 @@ interface IModalProps {
   setOpen: () => void;
 }
 
+var email: string = "lucasgsantos1727@gmail.com";
+
+var whatsapp_number: number = 5511961499951;
+
+var whatsapp_text: string = "Olá%20preciso%20de%20um%20projeto!";
+
+const socialsIcons = [
+  {
+    alt: "github icon",
+    description: require("../../../assets/images/github.svg").default,
+    href: "https://github.com/luzka1",
+  },
+  {
+    alt: "linkedin icon",
+    description: require("../../../assets/images/linkedin.svg").default,
+    href: "https://www.linkedin.com/in/lucas-santos-341856247/",
+  },
+  {
+    alt: "email icon",
+    description: require("../../../assets/images/email.svg").default,
+  },
+  {
+    alt: "whatsapp icon",
+    description: require("../../../assets/images/whatsapp.svg").default,
+    href: `https://wa.me/${whatsapp_number}?text=${whatsapp_text}`,
+  },
+];
+
 export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
   if (!isOpen) {
     return null;
   }
-
-  var email: string = "lucasgsantos1727@gmail.com";
-
-  var whatsapp_number: number = 5511961499951;
-
-  var whatsapp_text: string = "Olá%20preciso%20de%20um%20projeto!";
 
   const copyToClipboard = async () => {
     try {
@@ -29,28 +51,6 @@ export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
       toast.error("Erro inesperado!");
     }
   };
-
-  const socialsIcons = [
-    {
-      alt: "github icon",
-      description: require("../../../assets/images/github.svg").default,
-      href: "https://github.com/luzka1",
-    },
-    {
-      alt: "linkedin icon",
-      description: require("../../../assets/images/linkedin.svg").default,
-      href: "https://www.linkedin.com/in/lucas-santos-341856247/",
-    },
-    {
-      alt: "email icon",
-      description: require("../../../assets/images/email.svg").default,
-    },
-    {
-      alt: "whatsapp icon",
-      description: require("../../../assets/images/whatsapp.svg").default,
-      href: `https://wa.me/${whatsapp_number}?text=${whatsapp_text}`,
-    },
-  ];
 
   return (
     <div className="background-modal">

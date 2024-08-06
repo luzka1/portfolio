@@ -22,8 +22,8 @@ function App() {
       />
       <BrowserRouter>
         <AppProvider>
-          <GlobalStyles />
-          <Rotas />
+            <GlobalStyles />
+            <Rotas />
         </AppProvider>
       </BrowserRouter>
     </div>

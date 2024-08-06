@@ -5,34 +5,42 @@ import img from "../../assets/images/img-proj.svg";
 import { Header, Footer, Button, OutlinedButton } from "../../components";
 import { scrollToTop } from "../../themes";
 import styles from "./styles.module.css";
+import { useWindowSize } from "../../data";
+
+const itemsIcons = [
+  {
+    alt: "javascript icon",
+    description: require("../../assets/images/js.svg").default,
+  },
+  {
+    alt: "react icon",
+    description: require("../../assets/images/react.svg").default,
+  },
+  {
+    alt: "figma icon",
+    description: require("../../assets/images/figma.svg").default,
+  },
+];
 
 export const ProjectPage = () => {
   const { id } = useParams();
   const { dataProject } = useAppContext();
   const proj = dataProject.find((idProj) => idProj.name === id);
+  const { width } = useWindowSize();
 
   useEffect(() => {
     scrollToTop();
   }, []);
 
-  const itemsIcons = [
-    {
-      alt: "javascript icon",
-      description: require("../../assets/images/js.svg").default,
-    },
-    {
-      alt: "react icon",
-      description: require("../../assets/images/react.svg").default,
-    },
-    {
-      alt: "figma icon",
-      description: require("../../assets/images/figma.svg").default,
-    },
-  ];
-
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
-      <Header />
+      {width > 1024 ? (
+        <Header />
+      ) : (
+        <div>
+          <Header />
+        </div>
+      )}
       <img src={img} alt={`foto do projeto ${proj?.name}`} />
       <section className={styles.sectionProject}>
         <div className={styles.title}>
