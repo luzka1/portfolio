@@ -1,2 +1,2 @@
-export * from './useAppContext';
 export * from './useTextsContext';
+export * from './useProjectsContext';

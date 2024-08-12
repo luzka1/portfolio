@@ -31,7 +31,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     flex-direction: column;
     align-items: center;
     background-color: var(--footer-background);
-    padding: 5rem 0;
+    padding: 2rem 0;
     gap:20px;
   }
   .section-container{

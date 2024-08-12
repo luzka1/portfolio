@@ -14,7 +14,7 @@ export const dataPtBr = {
   section1: {
     title: "Sobre mim",
     subtitle: "Olá, me chamo Lucas Gabriel dos Santos",
-    text: "Me chamo Lucas Gabriel dos Santos, sou um amante da tecnologia e de arte.\n\nMe formei no ensino médio integrado ao curso técnico de Informática em 2020, desde então criei um enorme interesse na área da tecnologia. Em março de 2021 iniciei a minha carreira no mercado de trabalho sendo operador de loja no mercado DIA, dentro de um ano e três meses adquiri competências essenciais, sendo elas: proatividade; trabalho em equipe e pensamento racional.\n\nMe formei no Instituto PROA que foi uma ótima experiência. Estou me aperfeiçoando em Front-End, utilizando HTML, CSS e JavaScript e pretendo me especializar na área de desenvolvimento web.\n\nSou autodidata nos estudos sobre edição de fotos e vídeos, assim me impulsiono criativamente para a realização de projetos.",
+    text: "Sou um amante da tecnologia e de arte.\n\nMe formei no ensino médio integrado ao curso técnico de Informática em 2020, desde então criei um enorme interesse na área da tecnologia. Em março de 2021 iniciei a minha carreira no mercado de trabalho sendo operador de loja no mercado DIA, dentro de um ano e três meses adquiri competências essenciais, sendo elas: proatividade; trabalho em equipe e pensamento racional.\n\nMe formei no Instituto PROA que foi uma ótima experiência. Estou me aperfeiçoando em Front-End, utilizando HTML, CSS e JavaScript e pretendo me especializar na área de desenvolvimento web.\n\nSou autodidata nos estudos sobre edição de fotos e vídeos, assim me impulsiono criativamente para a realização de projetos.",
     itemsExp: [
       { id: 1, description: "Anos de experiência" },
       { id: 5, description: "Cursos completos" },
@@ -78,7 +78,7 @@ export const dataEn = {
   section1: {
     title: "About Me",
     subtitle: "Hello, my name is Lucas Gabriel dos Santos",
-    text: "My name is Lucas Gabriel dos Santos, and I am a lover of technology and art.\n\nI graduated from high school integrated with a technical course in Computer Science in 2020, and since then, I have developed a great interest in technology. In March 2021, I started my career in the job market as a store operator at the DIA market. Within a year and three months, I acquired essential skills, including proactivity, teamwork, and rational thinking.\n\nI graduated from the PROA Institute, which was a great experience. I am currently improving my skills in Front-End development, using HTML, CSS, and JavaScript, and I intend to specialize in web development.\n\nI am self-taught in photo and video editing, which creatively drives me to realize projects.",
+    text: "I am a lover of technology and art.\n\nI graduated from high school integrated with a technical course in Computer Science in 2020, and since then, I have developed a great interest in technology. In March 2021, I started my career in the job market as a store operator at the DIA market. Within a year and three months, I acquired essential skills, including proactivity, teamwork, and rational thinking.\n\nI graduated from the PROA Institute, which was a great experience. I am currently improving my skills in Front-End development, using HTML, CSS, and JavaScript, and I intend to specialize in web development.\n\nI am self-taught in photo and video editing, which creatively drives me to realize projects.",
     itemsExp: [
       { id: 1, description: "Years of experience" },
       { id: 5, description: "Completed courses" },

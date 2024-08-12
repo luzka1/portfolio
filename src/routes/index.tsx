@@ -14,7 +14,7 @@ export const Rotas = () => {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/project/:id" element={<ProjectPage />} />
-        <Route path="*" element={<Error />} />
+        <Route path={"*"} element={<Error />} />
       </Routes>
     </>
   );

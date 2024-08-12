@@ -29,12 +29,6 @@ const socialsIcons = [
   },
 ];
 
-const links = [
-  { name: "Sobre Mim", href: "#about-me" },
-  { name: "Projetos", href: "#projects" },
-  { name: "Contato", href: "#contact-me" },
-];
-
 export const Footer = () => {
   const { data } = useTextsContext();
   const navigate = useNavigate();

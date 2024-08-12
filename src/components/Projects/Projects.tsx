@@ -1,18 +1,20 @@
 import styles from "./styles.module.css";
 import { Button, Project } from "..";
 import { useNavigate } from "react-router-dom";
-import useAppContext from "../../data/hooks/useAppContext";
 import useTextsContext from "../../data/hooks/useTextsContext";
+import useProjectsContext from "../../data/hooks/useProjectsContext";
 
 export const Projects = () => {
   const { data } = useTextsContext();
   const navigate = useNavigate();
-  const { dataProject } = useAppContext();
+  const {projects} = useProjectsContext();
   const ButtonClick = () => {
     navigate("/projects");
   };
 
   var buttonValid: boolean = false;
+
+  console.log(projects)
 
   return (
     <section className={styles.pContainer} id="projects">
@@ -32,8 +34,8 @@ export const Projects = () => {
         ) : null}
       </div>
       <div className={styles.projects}>
-        {dataProject.slice(0, 3).map((item, id) => (
-          <Project key={id} id={id} item={item} />
+        {projects.slice(0, 3).map((item, id) => (
+          <Project key={item.id} id={id} item={item} />
         ))}
       </div>
     </section>

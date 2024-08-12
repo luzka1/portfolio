@@ -28,6 +28,7 @@
 .project {
     display: flex;
     gap: 50px;
+    overflow: hidden;
 }
 
 .project div{
@@ -53,6 +54,11 @@
     text-align: left;
     display: flex;
     align-items: center;
+    transition: 200ms all;
+}
+
+.project button:hover{
+    transform: scale(105%);
 }
 
 @media (max-width:1024px){

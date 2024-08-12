@@ -2,11 +2,18 @@ import { GlobalStyles } from "./themes";
 import { Rotas } from "./routes";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
-import { AppProvider } from "./data";
 import "react-toastify/dist/ReactToastify.css";
 import { TextsContextProvider } from "./data/TextsContext";
+import Parse from "parse";
+import { ProjectsProvider } from "./data/ProjectsContext";
 
 function App() {
+  Parse.initialize(
+    "iIuCpQSvejU7fZrVs14IUvkGYKNqbHxCJwI6MKMR",
+    "UcF2RvOtVxLXjDeRz3Mrs6HvoDImh76ls3Qlwkvg"
+  );
+  Parse.serverURL = "https://parseapi.back4app.com/";
+
   return (
     <div>
       <ToastContainer
@@ -22,12 +29,12 @@ function App() {
         theme="light"
       />
       <BrowserRouter>
-        <AppProvider>
+        <ProjectsProvider>
           <TextsContextProvider>
             <GlobalStyles />
             <Rotas />
           </TextsContextProvider>
-        </AppProvider>
+        </ProjectsProvider>
       </BrowserRouter>
     </div>
   );

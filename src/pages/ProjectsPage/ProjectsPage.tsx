@@ -1,17 +1,18 @@
 import { useEffect } from "react";
-import { Footer, Header, Project, Projects } from "../../components";
+import { Footer, Header, Project } from "../../components";
 import { scrollToTop } from "../../themes";
 import styles from "./styles.module.css";
-import useAppContext from "../../data/hooks/useAppContext";
 import useTextsContext from "../../data/hooks/useTextsContext";
+import useProjectsContext from "../../data/hooks/useProjectsContext";
 
 export const ProjectsPage = () => {
-  const { dataProject } = useAppContext();
-  const {data} = useTextsContext();
+  const { projects } = useProjectsContext();
+  const { data } = useTextsContext();
 
   useEffect(() => {
     scrollToTop();
   }, []);
+
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "100px" }}>
@@ -26,7 +27,7 @@ export const ProjectsPage = () => {
           </p>
         </div>
         <div className={styles.projects}>
-          {dataProject.map((item, id) => (
+          {projects.map((item, id) => (
             <Project key={id} id={id} item={item} />
           ))}
         </div>

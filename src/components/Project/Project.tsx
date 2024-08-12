@@ -5,23 +5,19 @@ import { motion } from "framer-motion";
 import { useWindowSize } from "../../data";
 import { useNavigate } from "react-router-dom";
 import useTextsContext from "../../data/hooks/useTextsContext";
+import { ProjectProps } from "../../interfaces/Project.interface";
 
-interface ProjectProps {
+interface ProjectPropss{
   id: number;
-  item: {
-    img: any;
-    name: string;
-    tiny_description: string;
-    full_description?: string;
-  };
+  item: ProjectProps;
 }
 
-export const Project = ({ id, item }: ProjectProps) => {
+export const Project = ({ id, item }: ProjectPropss) => {
   const navigate = useNavigate();
   const { data } = useTextsContext();
 
   const handleClick = () => {
-    navigate(`/project/${item.name}`);
+    navigate(`/project/${item.id}`);
   };
 
   const { width } = useWindowSize();
