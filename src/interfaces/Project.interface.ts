@@ -11,4 +11,6 @@ export interface IProjectsContext {
     proj_link?: string;
     git_link?:string;
     techs?: string[];
+    tiny_desc_en?: string;
+    full_desc_en?: string;
   }

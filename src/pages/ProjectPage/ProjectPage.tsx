@@ -52,6 +52,8 @@ export const ProjectPage = () => {
     proj?.techs?.includes(item.alt.split(" ")[0])
   );
 
+  console.log(proj);
+
   return proj ? (
     <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
       {width > 1024 ? (
@@ -65,14 +67,22 @@ export const ProjectPage = () => {
       <section className={styles.sectionProject}>
         <div className={styles.title}>
           <h2>{proj?.name}</h2>
-          <p>{proj?.tiny_description}</p>
+          <p>
+            {data.lang === "pt-br"
+              ? proj?.tiny_description
+              : proj?.tiny_desc_en}
+          </p>
         </div>
         <div className={styles.description}>
           <div className={styles.title}>
             <h3>{data.projectPage.title}</h3>
           </div>
           <div className={styles.details}>
-            <p>{proj?.full_description}</p>
+            <p>
+              {data.lang === "pt-br"
+                ? proj?.full_description
+                : proj?.full_desc_en}
+            </p>
             <div className={styles.links}>
               {proj?.git_link ? (
                 <Button

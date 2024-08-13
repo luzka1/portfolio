@@ -22,6 +22,7 @@ export const GlobalStyles = createGlobalStyle<{}>`
     font-family: 'Space Grotesk', sans-serif;
     color:white;
     scroll-behavior: smooth;
+    text-overflow: ellipsis;
   }
   body{
     background-color: var(--background-color);  

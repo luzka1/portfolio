@@ -1,4 +1,5 @@
 export const dataPtBr = {
+  lang: 'pt-br',
   header: {
     texts: [
       { name: "Sobre Mim", linkTo: "about-me" },
@@ -63,6 +64,7 @@ export const dataPtBr = {
 };
 
 export const dataEn = {
+  lang: 'en-us',
   header: {
     texts: [
       { name: "About Me", linkTo: "about-me" },

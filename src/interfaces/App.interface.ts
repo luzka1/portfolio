@@ -1,9 +1,10 @@
 export interface ITextsContext {
   data: IData;
-  setData: (value: IData) => void;
+  setData: (value: string) => void;
 }
 
 export interface IData {
+  lang: string;
   header: IHeader;
   banner: IBanner;
   section1: ISection;

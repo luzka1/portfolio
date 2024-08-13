@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import brasil from "../../assets/images/brasil.svg";
 import eu from "../../assets/images/united-states.svg";
 import useTextsContext from "../../data/hooks/useTextsContext";
-import { dataEn, dataPtBr } from "../../data/langs";
 
 const languages = [
   {
@@ -23,8 +22,12 @@ export const Header = () => {
   const navigate = useNavigate();
   const headerRef = useRef<HTMLElement>(null);
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
   const { data, setData } = useTextsContext();
+
+  const initialLanguage = localStorage.getItem("language") || "PT-BR";
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    languages.find(lang => lang.lang === initialLanguage) || languages[0]
+  );
 
   const toHomePage = () => {
     navigate("/");
@@ -51,16 +54,7 @@ export const Header = () => {
     setSelectedLanguage(language);
     setMenuIsOpen(false);
 
-    switch (language.lang) {
-      case "PT-BR":
-        setData(dataPtBr);
-        break;
-      case "EN-US":
-        setData(dataEn);
-        break;
-      default:
-        return;
-    }
+    setData(language.lang);
   };
 
   return (

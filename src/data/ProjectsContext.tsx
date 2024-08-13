@@ -19,6 +19,8 @@ export function ProjectsProvider(props: any) {
         name: project.get("name"),
         tiny_description: project.get("tiny_description"),
         full_description: project.get("full_description"),
+        tiny_desc_en: project.get("tiny_desc_en"),
+        full_desc_en: project.get("full_desc_en"),
         proj_link: project.get("proj_link"),
         git_link: project.get("git_link"),
         techs: project.get("techs") || [],

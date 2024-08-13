@@ -45,7 +45,11 @@ export const Project = ({ id, item }: ProjectPropss) => {
       />
       <div>
         <span>{item.name}</span>
-        <p>{item.tiny_description}</p>
+                  <p>
+            {data.lang === "pt-br"
+              ? item?.tiny_description
+              : item?.tiny_desc_en}
+          </p>
         <button onClick={handleClick}>
           {data.section2.buttons} <img src={doubleArrow} alt="" />
         </button>
