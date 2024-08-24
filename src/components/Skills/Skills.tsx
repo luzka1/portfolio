@@ -12,7 +12,7 @@ const itemsIcons = [
   alt: "next icon",
   description: require("../../assets/images/next.svg").default,
   color: "#000000",
-  percent: "80%",
+  percent: "50%",
 },
 {
   name: "JavaScript",
@@ -33,11 +33,11 @@ const itemsIcons = [
   alt: "figma icon",
   description: require("../../assets/images/figma.svg").default,
   color: "#FF7262",
-  percent: "80%",
+  percent: "70%",
 },
 ];
 
-export const Habilities = () => {
+export const Skills = () => {
   const {data} = useTextsContext();
 
   const handleClick = () => {

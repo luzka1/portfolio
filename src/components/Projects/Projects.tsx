@@ -14,8 +14,6 @@ export const Projects = () => {
 
   var buttonValid: boolean = false;
 
-  console.log(projects)
-
   return (
     <section className={styles.pContainer} id="projects">
       <div className={styles.title}>

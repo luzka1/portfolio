@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { TextsContextProvider } from "./data/TextsContext";
 import Parse from "parse";
 import { ProjectsProvider } from "./data/ProjectsContext";
+import { AppConfigProvider } from "./data/AppConfigContext";
 
 function App() {
   Parse.initialize(
@@ -29,12 +30,14 @@ function App() {
         theme="light"
       />
       <BrowserRouter>
-        <ProjectsProvider>
-          <TextsContextProvider>
-            <GlobalStyles />
-            <Rotas />
-          </TextsContextProvider>
-        </ProjectsProvider>
+        <AppConfigProvider>
+          <ProjectsProvider>
+            <TextsContextProvider>
+              <GlobalStyles />
+              <Rotas />
+            </TextsContextProvider>
+          </ProjectsProvider>
+        </AppConfigProvider>
       </BrowserRouter>
     </div>
   );

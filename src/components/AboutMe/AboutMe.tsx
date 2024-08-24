@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import styles from "./styles.module.css";
 import useTextsContext from "../../data/hooks/useTextsContext";
-import useProjectsContext from "../../data/hooks/useProjectsContext";
 
 const itemsIcons = [
   {

@@ -5,7 +5,7 @@ export * from "./Banner";
 export * from "./AboutMe";
 export * from "./Projects";
 export * from "./Project";
-export * from "./Habilities";
+export * from "./Skills";
 export * from "./ContactMe";
 export * from "./Footer";
 export * from "./Modals";

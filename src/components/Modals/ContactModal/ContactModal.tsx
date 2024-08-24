@@ -5,42 +5,18 @@ import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import { modalAnimation } from "../../../themes";
 import useTextsContext from "../../../data/hooks/useTextsContext";
+import useAppConfigContext from "../../../data/hooks/useAppConfigContext";
 
 interface IModalProps {
   isOpen: boolean;
   setOpen: () => void;
 }
 
-var email: string = "lucasgsantos1727@gmail.com";
-
-var whatsapp_number: number = 5511961499951;
-
-var whatsapp_text: string = "Olá%20preciso%20de%20um%20projeto!";
-
-const socialsIcons = [
-  {
-    alt: "github icon",
-    description: require("../../../assets/images/github.svg").default,
-    href: "https://github.com/luzka1",
-  },
-  {
-    alt: "linkedin icon",
-    description: require("../../../assets/images/linkedin.svg").default,
-    href: "https://www.linkedin.com/in/lucas-santos-341856247/",
-  },
-  {
-    alt: "email icon",
-    description: require("../../../assets/images/email.svg").default,
-  },
-  {
-    alt: "whatsapp icon",
-    description: require("../../../assets/images/whatsapp.svg").default,
-    href: `https://wa.me/${whatsapp_number}?text=${whatsapp_text}`,
-  },
-];
-
 export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
   const { data } = useTextsContext();
+  const { dataConfig } = useAppConfigContext();
+  const email = dataConfig?.email || "lucas@gmail.com";
+
   if (!isOpen) {
     return null;
   }
@@ -53,6 +29,28 @@ export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
       toast.error("Erro inesperado!");
     }
   };
+
+  const socialsIcons = [
+    {
+      alt: "github icon",
+      description: require("../../../assets/images/github.svg").default,
+      href: "https://github.com/luzka1",
+    },
+    {
+      alt: "linkedin icon",
+      description: require("../../../assets/images/linkedin.svg").default,
+      href: "https://www.linkedin.com/in/lucas-santos-341856247/",
+    },
+    {
+      alt: "email icon",
+      description: require("../../../assets/images/email.svg").default,
+    },
+    {
+      alt: "whatsapp icon",
+      description: require("../../../assets/images/whatsapp.svg").default,
+      href: `https://wa.me/${dataConfig?.whatsapp_number}?text=${dataConfig?.whatsapp_text}`,
+    },
+  ];
 
   return (
     <div className="background-modal">
@@ -72,13 +70,12 @@ export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
           {socialsIcons.map((item, id) => (
             <div key={id} className={styles.icon}>
               <a href={item.href} target="_blank" rel="noreferrer">
-                <img src={item.description} width={50} alt={item.alt} />
+                <img src={item.description} width={40} alt={item.alt} />
               </a>
             </div>
           ))}
         </nav>
         <div className={styles.copyBoard}>
-          <p>{data.section4.text}</p>
           <div>
             <input readOnly placeholder={email} value={email} type="email" />
             <img src={copy} alt="copy button" onClick={copyToClipboard} />

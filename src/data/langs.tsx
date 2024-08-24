@@ -1,5 +1,5 @@
 export const dataPtBr = {
-  lang: 'pt-br',
+  lang: "pt-br",
   header: {
     texts: [
       { name: "Sobre Mim", linkTo: "about-me" },
@@ -15,7 +15,7 @@ export const dataPtBr = {
   section1: {
     title: "Sobre mim",
     subtitle: "Olá, me chamo Lucas Gabriel dos Santos",
-    text: "Sou um amante da tecnologia e de arte.\n\nMe formei no ensino médio integrado ao curso técnico de Informática em 2020, desde então criei um enorme interesse na área da tecnologia. Em março de 2021 iniciei a minha carreira no mercado de trabalho sendo operador de loja no mercado DIA, dentro de um ano e três meses adquiri competências essenciais, sendo elas: proatividade; trabalho em equipe e pensamento racional.\n\nMe formei no Instituto PROA que foi uma ótima experiência. Estou me aperfeiçoando em Front-End, utilizando HTML, CSS e JavaScript e pretendo me especializar na área de desenvolvimento web.\n\nSou autodidata nos estudos sobre edição de fotos e vídeos, assim me impulsiono criativamente para a realização de projetos.",
+    text: "Sou um amante da tecnologia e de arte.\n\nMe formei no ensino médio integrado ao curso técnico de Informática em 2020, desde então criei um enorme interesse na área da tecnologia. Em março de 2021 iniciei a minha carreira no mercado de trabalho sendo operador de loja em um mercado de bairro, dentro de um ano e três meses adquiri competências essenciais, sendo elas: proatividade; trabalho em equipe e pensamento racional.\n\nMe formei no Instituto PROA que foi uma ótima experiência, onde eu pude aprender conceitos importantes e mais aprofundados sobre programação. Estou me aperfeiçoando em Front-End, utilizando TypeScript, ReactJs e NextJs e pretendo me especializar na área de desenvolvimento web.\n\nSou autodidata nos estudos sobre edição de fotos e vídeos, assim me impulsiono criativamente para a realização de projetos.",
     itemsExp: [
       { id: 1, description: "Anos de experiência" },
       { id: 5, description: "Cursos completos" },
@@ -40,7 +40,7 @@ export const dataPtBr = {
     subject: "Assunto",
     message: "Escreva sua mensagem...",
     button: "Enviar",
-    text: "Meu E-mail para contato"
+    text: "Meus contatos",
   },
   footer: {
     texts: [
@@ -58,13 +58,12 @@ export const dataPtBr = {
   },
   projectPage: {
     title: "DESCRIÇÃO",
-    subtitle:
-      "TECNOLOGIAS UTILIZADAS",
+    subtitle: "TECNOLOGIAS UTILIZADAS",
   },
 };
 
 export const dataEn = {
-  lang: 'en-us',
+  lang: "en-us",
   header: {
     texts: [
       { name: "About Me", linkTo: "about-me" },
@@ -80,7 +79,7 @@ export const dataEn = {
   section1: {
     title: "About Me",
     subtitle: "Hello, my name is Lucas Gabriel dos Santos",
-    text: "I am a lover of technology and art.\n\nI graduated from high school integrated with a technical course in Computer Science in 2020, and since then, I have developed a great interest in technology. In March 2021, I started my career in the job market as a store operator at the DIA market. Within a year and three months, I acquired essential skills, including proactivity, teamwork, and rational thinking.\n\nI graduated from the PROA Institute, which was a great experience. I am currently improving my skills in Front-End development, using HTML, CSS, and JavaScript, and I intend to specialize in web development.\n\nI am self-taught in photo and video editing, which creatively drives me to realize projects.",
+    text: "I am a technology and art enthusiast. I graduated from high school integrated with a technical course in Informatics in 2020, and since then, I developed a great interest in the technology field. In March 2021, I started my career in the job market as a store operator in a neighborhood market. Within a year and three months, I acquired essential skills, such as proactivity, teamwork, and rational thinking. I graduated from Instituto PROA, which was a great experience where I could learn important and more in-depth programming concepts. I am currently improving my skills in Front-End development, using TypeScript, ReactJs, and NextJs, and I intend to specialize in web development. I am self-taught in photo and video editing studies, which creatively drives me to carry out projects.",
     itemsExp: [
       { id: 1, description: "Years of experience" },
       { id: 5, description: "Completed courses" },
@@ -104,7 +103,7 @@ export const dataEn = {
     subject: "Subject",
     message: "Write your message...",
     button: "Send",
-    text: "My contact email"
+    text: "My contacts",
   },
   footer: {
     texts: [
@@ -122,7 +121,6 @@ export const dataEn = {
   },
   projectPage: {
     title: "DESCRIPTION",
-    subtitle:
-      "TECHNOLOGIES USED",
+    subtitle: "TECHNOLOGIES USED",
   },
 };

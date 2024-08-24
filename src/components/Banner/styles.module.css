@@ -23,7 +23,6 @@
     align-items: center;
     width: 85%;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .innerContainer p{

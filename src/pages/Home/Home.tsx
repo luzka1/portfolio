@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import { AboutMe, Banner, ContactMe, Footer, Habilities, Header, Projects } from "../../components";
+import { AboutMe, Banner, ContactMe, Footer, Header, Projects, Skills } from "../../components";
 import { scrollToTop } from "../../themes";
-
 
 export const Home = () => {
   useEffect(()=>{
@@ -16,7 +15,7 @@ export const Home = () => {
       </div>
       <Projects />
       <div className="section-container">
-        <Habilities />
+        <Skills />
       </div>
       <ContactMe />
       <Footer />

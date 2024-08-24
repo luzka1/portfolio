@@ -110,7 +110,6 @@ export const ProjectPage = () => {
               <div key={id}>
                 <img
                   src={item.description}
-                  width={50}
                   height={50}
                   alt={item.alt}
                 />

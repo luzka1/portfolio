@@ -41,14 +41,14 @@ export const GlobalStyles = createGlobalStyle<{}>`
   }
   
   .background-modal{
+    display: flex;
+    align-items:center;
+    justify-content:center;
     position: fixed;
     width:100%;
     height:100vh;
-    background-color: rgba(0, 0, 0, 0.5); ;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index:10;
-    display:flex;
-    align-items:center;
-    justify-content:center;
   }
   
   a{

@@ -1,3 +1,14 @@
+export interface IAppConfigContext {
+  dataConfig?: IAppConfig;
+}
+
+export interface IAppConfig{
+  id: string;
+  whatsapp_number: string;
+  whatsapp_text: string;
+  email: string;
+}
+
 export interface ITextsContext {
   data: IData;
   setData: (value: string) => void;

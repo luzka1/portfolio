@@ -2,36 +2,12 @@ import styles from "./styles.module.css";
 import logo from "../../assets/images/logo.svg";
 import useTextsContext from "../../data/hooks/useTextsContext";
 import { useNavigate } from "react-router-dom";
-
-var whatsapp_number:number = 5511961499951;
-
-var whatsapp_text:string = 'Olá%20preciso%20de%20um%20projeto!';
-
-const socialsIcons = [
-  {
-    alt: "github icon",
-    description: require("../../assets/images/github.svg").default,
-    href: "https://github.com/luzka1"
-  },
-  {
-    alt: "linkedin icon",
-    description: require("../../assets/images/linkedin.svg").default,
-    href: "https://www.linkedin.com/in/lucas-santos-341856247/"
-  },
-  {
-    alt: "email icon",
-    description: require("../../assets/images/email.svg").default,
-  },
-  {
-    alt: "whatsapp icon",
-    description: require("../../assets/images/whatsapp.svg").default,
-    href: `https://wa.me/${whatsapp_number}?text=${whatsapp_text}`,
-  },
-];
+import useAppConfigContext from "../../data/hooks/useAppConfigContext";
 
 export const Footer = () => {
   const { data } = useTextsContext();
   const navigate = useNavigate();
+  const { dataConfig } = useAppConfigContext();
 
   const handleScrollToSection = (section: string) => {
     navigate("/");
@@ -44,6 +20,27 @@ export const Footer = () => {
     }, 100);
   };
 
+  const socialsIcons = [
+    {
+      alt: "github icon",
+      description: require("../../assets/images/github.svg").default,
+      href: "https://github.com/luzka1"
+    },
+    {
+      alt: "linkedin icon",
+      description: require("../../assets/images/linkedin.svg").default,
+      href: "https://www.linkedin.com/in/lucas-santos-341856247/"
+    },
+    {
+      alt: "email icon",
+      description: require("../../assets/images/email.svg").default,
+    },
+    {
+      alt: "whatsapp icon",
+      description: require("../../assets/images/whatsapp.svg").default,
+      href: `https://wa.me/${dataConfig?.whatsapp_number}?text=${dataConfig?.whatsapp_text}`,
+    },
+  ];
 
   return (
     <footer>

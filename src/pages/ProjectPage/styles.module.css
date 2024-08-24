@@ -36,8 +36,8 @@
     display: flex;
     width: 80%;
     margin: 0 auto;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 50px;
 }
