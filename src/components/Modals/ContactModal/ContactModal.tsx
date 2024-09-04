@@ -15,7 +15,7 @@ interface IModalProps {
 export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
   const { data } = useTextsContext();
   const { dataConfig } = useAppConfigContext();
-  const email = dataConfig?.email || "lucas@gmail.com";
+  const email = dataConfig?.email || "lucasgsantos1727@gmail.com";
 
   if (!isOpen) {
     return null;
