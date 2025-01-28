@@ -7,6 +7,7 @@ import { TextsContextProvider } from "./data/TextsContext";
 import Parse from "parse";
 import { ProjectsProvider } from "./data/ProjectsContext";
 import { AppConfigProvider } from "./data/AppConfigContext";
+import { Header } from "./components";
 
 function App() {
   Parse.initialize(

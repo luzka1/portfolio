@@ -9,3 +9,4 @@ export * from "./Skills";
 export * from "./ContactMe";
 export * from "./Footer";
 export * from "./Modals";
+export * from "./Skeleton";

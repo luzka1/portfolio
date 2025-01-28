@@ -4,7 +4,7 @@ header {
     left: 50%;
     top: 2%;
     transform: translateX(-50%);
-    width: 95vw;
+    width: 90vw;
     height: 70px;
     background-color: var(--header-background);
     justify-content: center;
@@ -41,7 +41,7 @@ header button {
     align-items: center;
 }
 
-.innerHeader>div div {
+.innerHeader>div div, .innerHeader>div button {
     cursor: pointer;
 }
 
@@ -85,6 +85,10 @@ header button {
 }
 
 @media (max-width:1024px) {
+    .innerHeader{
+        width: 90%;
+    }
+
     .btnHeader {
         display: flex;
     }

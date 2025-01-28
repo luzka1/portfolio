@@ -1,8 +1,7 @@
 import styles from "./styles.module.css";
-import { Button, Project } from "..";
+import { Button, Project, Skeleton } from "..";
 import useTextsContext from "../../data/hooks/useTextsContext";
 import useProjectsContext from "../../data/hooks/useProjectsContext";
-import { motion } from "framer-motion";
 
 export const Projects = () => {
   const { data } = useTextsContext();
@@ -31,18 +30,7 @@ export const Projects = () => {
             .slice(0, 3)
             .map((item, id) => <Project key={item.id} id={id} item={item} />)
         ) : (
-          <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              duration: 1.5,
-              ease: [0, 0.71, 0.2, 1.01],
-              delay: 0,
-            }}
-            className={styles.skeleton}
-          >
-            <div className={styles.cardDescription}></div>
-          </motion.div>
+          <Skeleton />
         )}
       </div>
     </section>

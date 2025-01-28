@@ -1,13 +1,7 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Home, ProjectsPage, Error, ProjectPage } from "../pages";
 
-
 export const Rotas = () => {
-  const location = useLocation();
-
-  const hiddenComponents =
-    location.pathname === "/error";
-
   return (
     <>
       <Routes>

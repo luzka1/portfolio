@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Header, Footer, Button, OutlinedButton } from "../../components";
+import {
+  Header,
+  Footer,
+  Button,
+  OutlinedButton,
+  Skeleton,
+} from "../../components";
 import { scrollToTop } from "../../themes";
 import styles from "./styles.module.css";
 import { useWindowSize } from "../../data";
@@ -53,7 +59,11 @@ export const ProjectPage = () => {
           <Header />
         </div>
       )}
-      <img src={proj?.img._url} alt={`foto do projeto ${proj?.name}`} />
+      {proj.img ? (
+        <img src={proj?.img._url} alt={`foto do projeto ${proj?.name}`} />
+      ) : (
+        <Skeleton />
+      )}
       <section className={styles.sectionProject}>
         <div className={styles.title}>
           <h2>{proj?.name}</h2>
@@ -76,10 +86,7 @@ export const ProjectPage = () => {
             <div className={styles.links}>
               {proj?.git_link ? (
                 <a href={proj?.git_link}>
-                  <Button
-                    text="Github"
-                    type="button"
-                  />
+                  <Button text="Github" type="button" />
                 </a>
               ) : null}
               {proj?.proj_link ? (
