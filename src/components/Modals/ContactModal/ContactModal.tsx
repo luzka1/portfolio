@@ -76,10 +76,8 @@ export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
           ))}
         </nav>
         <div className={styles.copyBoard}>
-          <div>
-            <input readOnly placeholder={email} value={email} type="email" />
-            <img src={copy} alt="copy button" onClick={copyToClipboard} />
-          </div>
+          <input readOnly placeholder={email} value={email} type="email" />
+          <img src={copy} alt="copy button" onClick={copyToClipboard} />
         </div>
       </motion.div>
     </div>

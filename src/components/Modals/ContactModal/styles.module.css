@@ -1,12 +1,10 @@
 .modal{
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     gap: 3rem;
     padding: 3rem;
     background-color: var(--second-background);
     width: 440px;
-    height: 350px;
     border-radius: 35px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
@@ -36,15 +34,10 @@
 
 .copyBoard{
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.copyBoard div{
-    display: flex;
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .copyBoard input{

@@ -1,6 +1,5 @@
 import styles from "../Projects/styles.module.css";
 import doubleArrow from "../../assets/images/double-arrow.svg";
-import img from "../../assets/images/img-proj.svg";
 import { motion } from "framer-motion";
 import { useWindowSize } from "../../data";
 import { useNavigate } from "react-router-dom";
@@ -39,17 +38,15 @@ export const Project = ({ id, item }: ProjectPropss) => {
       }
     >
       <img
-        src={img}
+        src={item.img._url}
         width={width < 1024 ? "100%" : "50%"}
         alt="foto do projeto sony"
       />
       <div>
         <span>{item.name}</span>
-                  <p>
-            {data.lang === "pt-br"
-              ? item?.tiny_description
-              : item?.tiny_desc_en}
-          </p>
+        <p>
+          {data.lang === "pt-br" ? item?.tiny_description : item?.tiny_desc_en}
+        </p>
         <button onClick={handleClick}>
           {data.section2.buttons} <img src={doubleArrow} alt="" />
         </button>

@@ -63,6 +63,7 @@
 @media (max-width:1024px){
     .hContainer{
         gap: 2rem;
+        margin-bottom: 2rem;
     }
     .innerHContainer{
         display: flex;

@@ -39,20 +39,10 @@ export const ProjectPage = () => {
     scrollToTop();
   }, []);
 
-  // Mostrar os botões na tela
-  const handleClickButton = (link: string) => {
-    if (link === "Github") {
-      window.open(`${proj?.git_link}`, "_blank");
-    }
-    window.open(`${proj?.proj_link}`, "_blank");
-  };
-
   // Filtra os ícones com base nas tecnologias do projeto
   const filteredIcons = itemsIcons.filter((item) =>
     proj?.techs?.includes(item.alt.split(" ")[0])
   );
-
-  console.log(proj);
 
   return proj ? (
     <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
@@ -85,18 +75,17 @@ export const ProjectPage = () => {
             </p>
             <div className={styles.links}>
               {proj?.git_link ? (
-                <Button
-                  text="Github"
-                  type="button"
-                  onClick={() => handleClickButton("Github")}
-                />
+                <a href={proj?.git_link}>
+                  <Button
+                    text="Github"
+                    type="button"
+                  />
+                </a>
               ) : null}
               {proj?.proj_link ? (
-                <OutlinedButton
-                  text="Projeto"
-                  type="button"
-                  onClick={() => handleClickButton("Projeto")}
-                />
+                <a href={proj?.proj_link}>
+                  <OutlinedButton text="Projeto" type="button" />
+                </a>
               ) : null}
             </div>
           </div>
@@ -108,11 +97,7 @@ export const ProjectPage = () => {
           <div className={styles.icons}>
             {filteredIcons.map((item, id) => (
               <div key={id}>
-                <img
-                  src={item.description}
-                  height={50}
-                  alt={item.alt}
-                />
+                <img src={item.description} height={50} alt={item.alt} />
               </div>
             ))}
           </div>

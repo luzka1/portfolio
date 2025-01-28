@@ -75,6 +75,7 @@
     .innerContainer{
         gap: 40px;
         flex-direction: column-reverse;
+        margin-bottom: 2rem;
     }
 
     .innerContainer p{

@@ -30,7 +30,7 @@ export const AboutMe = () => {
         <h1>{data.section1.title}</h1>
       </div>
       <motion.div
-        initial={{ opacity: 0, x: 150 }}
+        initial={{ opacity: 0, x: 200 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{
           duration: 1.5,
