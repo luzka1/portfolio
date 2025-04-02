@@ -16,20 +16,44 @@ import { Error } from "../Error";
 
 const itemsIcons = [
   {
+    name: "JavaScript",
     alt: "javascript icon",
     description: require("../../assets/images/js.svg").default,
   },
   {
+    name: "ReactJS",
     alt: "react icon",
     description: require("../../assets/images/react.svg").default,
   },
   {
+    name: "Figma",
     alt: "figma icon",
     description: require("../../assets/images/figma.svg").default,
   },
   {
+    name: "NextJS",
     alt: "next icon",
     description: require("../../assets/images/next.svg").default,
+  },
+  {
+    name: "Typescript",
+    alt: "typescript icon",
+    description: require("../../assets/images/typescript.svg").default,
+  },
+  {
+    name: "Tailwind",
+    alt: "tailwind icon",
+    description: require("../../assets/images/tailwind.svg").default,
+  },
+  {
+    name: "ShadCn",
+    alt: "shadcn icon",
+    description: require("../../assets/images/shadcn.svg").default,
+  },
+  {
+    name: "Vite",
+    alt: "vite icon",
+    description: require("../../assets/images/vite.svg").default,
   },
 ];
 
@@ -60,10 +84,29 @@ export const ProjectPage = () => {
         </div>
       )}
       {proj.img ? (
-        <img src={proj?.img._url} alt={`foto do projeto ${proj?.name}`} />
+        <div className={styles.banner}>
+          <img
+            src={proj?.img._url}
+            className={styles.projectImage}
+            alt={`foto do projeto ${proj?.name}`}
+          />
+          <div className={styles.links}>
+            {proj?.git_link ? (
+              <a target="_blank" href={proj?.git_link} rel="noreferrer">
+                <Button text="Github" type="button" />
+              </a>
+            ) : null}
+            {proj?.proj_link ? (
+              <a target="_blank" href={proj?.proj_link} rel="noreferrer">
+                <OutlinedButton text="Projeto" type="button" />
+              </a>
+            ) : null}
+          </div>
+        </div>
       ) : (
         <Skeleton />
       )}
+
       <section className={styles.sectionProject}>
         <div className={styles.title}>
           <h2>{proj?.name}</h2>
@@ -83,28 +126,18 @@ export const ProjectPage = () => {
                 ? proj?.full_description
                 : proj?.full_desc_en}
             </p>
-            <div className={styles.links}>
-              {proj?.git_link ? (
-                <a href={proj?.git_link}>
-                  <Button text="Github" type="button" />
-                </a>
-              ) : null}
-              {proj?.proj_link ? (
-                <a href={proj?.proj_link}>
-                  <OutlinedButton text="Projeto" type="button" />
-                </a>
-              ) : null}
-            </div>
           </div>
         </div>
         <div className={styles.tecs}>
           <div className={styles.title}>
             <h3>{data.projectPage.subtitle}</h3>
           </div>
+
           <div className={styles.icons}>
-            {filteredIcons.map((item, id) => (
-              <div key={id}>
-                <img src={item.description} height={50} alt={item.alt} />
+            {filteredIcons.map((icon, id) => (
+              <div className={styles.techIcon} key={id}>
+                <img src={icon.description} height={50} alt={icon.alt} />
+                <span>{icon.name}</span>
               </div>
             ))}
           </div>

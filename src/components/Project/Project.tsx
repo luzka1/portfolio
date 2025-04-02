@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import useTextsContext from "../../data/hooks/useTextsContext";
 import { ProjectProps } from "../../interfaces/Project.interface";
 
-interface ProjectPropss{
+interface ProjectPropss {
   id: number;
   item: ProjectProps;
 }
@@ -39,8 +39,9 @@ export const Project = ({ id, item }: ProjectPropss) => {
     >
       <img
         src={item.img._url}
+        style={{ borderRadius: "8px" }}
         width={width < 1024 ? "100%" : "50%"}
-        alt="foto do projeto sony"
+        alt={`foto do projeto ${item.name}`}
       />
       <div>
         <span>{item.name}</span>
