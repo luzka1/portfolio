@@ -8,10 +8,13 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.78",
     "@types/react": "^18.2.51",
     "@types/react-dom": "^18.2.18",
+    "better-sqlite3": "^12.10.0",
+    "drizzle-orm": "^0.45.2",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.3.8",
     "parse": "^5.3.0",
@@ -55,6 +58,8 @@
     "@types/parse": "^3.0.9",
     "@types/react-scroll": "^1.8.10",
     "@types/styled-system": "^5.1.22",
-    "@types/three": "^0.166.0"
+    "@types/three": "^0.166.0",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.22.2"
   }
 }

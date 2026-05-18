@@ -4,7 +4,6 @@ import copy from "../../../assets/images/copy.svg";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import { modalAnimation } from "../../../themes";
-import useTextsContext from "../../../data/hooks/useTextsContext";
 import useAppConfigContext from "../../../data/hooks/useAppConfigContext";
 
 interface IModalProps {
@@ -13,7 +12,6 @@ interface IModalProps {
 }
 
 export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
-  const { data } = useTextsContext();
   const { dataConfig } = useAppConfigContext();
   const email = dataConfig?.email || "lucasgsantos1727@gmail.com";
 
@@ -61,7 +59,7 @@ export const ContactModal = ({ isOpen, setOpen }: IModalProps) => {
         animate="visible"
       >
         <div>
-          <h3>{data.section4.text}</h3>
+          <h3>Meus contatos</h3>
           <div onClick={setOpen}>
             <img src={close} alt="close button" style={{ cursor: "pointer" }} />
           </div>

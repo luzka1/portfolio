@@ -1,12 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {
-  Header,
-  Footer,
-  Button,
-  OutlinedButton,
-  Skeleton,
-} from "../../components";
+import { Header, Footer, Button, Skeleton } from "../../components";
 import { scrollToTop } from "../../themes";
 import styles from "./styles.module.css";
 import { useWindowSize } from "../../data";
@@ -71,7 +65,7 @@ export const ProjectPage = () => {
 
   // Filtra os ícones com base nas tecnologias do projeto
   const filteredIcons = itemsIcons.filter((item) =>
-    proj?.techs?.includes(item.alt.split(" ")[0])
+    proj?.techs?.includes(item.alt.split(" ")[0]),
   );
 
   return proj ? (
@@ -98,7 +92,7 @@ export const ProjectPage = () => {
             ) : null}
             {proj?.proj_link ? (
               <a target="_blank" href={proj?.proj_link} rel="noreferrer">
-                <OutlinedButton text="Projeto" type="button" />
+                <Button variant="outlined" text="Projeto" type="button" />
               </a>
             ) : null}
           </div>

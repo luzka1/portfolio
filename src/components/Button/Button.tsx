@@ -1,12 +1,25 @@
+type ButtonVariant = "principal" | "outlined";
 
-interface ButtonProps {
+type ButtonProps = {
   text?: string;
-  type?: "submit" | "reset" | "button" | undefined;
   onClick?: (e: any) => void;
-}
+  variant?: ButtonVariant;
+} & React.ComponentProps<"button">;
 
-export const Button = ({text, type, onClick} : ButtonProps) => {
+export const Button = ({
+  text,
+  onClick,
+  variant = "principal",
+  ...rest
+}: ButtonProps) => {
+  const buttonVariants = {
+    principal: "principalButton",
+    outlined: "outlinedButton",
+  };
+
   return (
-    <button className='principalButton' type={type} onClick={onClick}>{text}</button>
-  )
-}
+    <button className={buttonVariants[variant]} {...rest} onClick={onClick}>
+      <span>{text}</span>
+    </button>
+  );
+};

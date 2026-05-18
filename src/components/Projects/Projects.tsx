@@ -20,7 +20,7 @@ export const Projects = () => {
         </div>
         {!buttonValid ? (
           <a href="/projects">
-            <Button text={data.section2.button} type="button" />
+            <Button text={data?.section2.button} type="button" />
           </a>
         ) : null}
       </div>

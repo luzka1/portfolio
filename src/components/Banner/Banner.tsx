@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { Button, ContactModal, OutlinedButton } from "..";
+import { Button, ContactModal } from "..";
 import logo from "../../assets/images/logo.svg";
 import arrow from "../../assets/images/arrow.svg";
 import { motion } from "framer-motion";
@@ -33,7 +33,7 @@ export const Banner = () => {
         transition={transition}
         className={styles.indicationDown}
       >
-        <p>{data.banner.scroll}</p>
+        <p>Role para baixo</p>
         <motion.img
           animate={{ y: [0, -20, 0] }}
           transition={{
@@ -81,15 +81,11 @@ export const Banner = () => {
             ))}
           </motion.div>
           <div className={styles.buttons}>
-            {data.banner.buttons.map((item, id) =>
-              id === 0 ? (
-                <Button key={id} text={item} type="reset" onClick={handleClick} />
-              ) : (
-                <a href="#projects">
-                  <OutlinedButton key={id} text={item} type="button" />
-                </a>
-              )
-            )}
+            <Button text="Contate-me" type="reset" onClick={handleClick} />
+
+            <a href="#projects">
+              <Button variant="outlined" text="Projetos" type="button" />
+            </a>
           </div>
         </motion.div>
         <div className={styles.photo}>

@@ -42,6 +42,7 @@ export const Project = ({ id, item }: ProjectPropss) => {
         style={{ borderRadius: "8px" }}
         width={width < 1024 ? "100%" : "50%"}
         alt={`foto do projeto ${item.name}`}
+        title={`foto do projeto ${item.name}`}
       />
       <div>
         <span>{item.name}</span>

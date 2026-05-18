@@ -4,10 +4,8 @@ import { Button } from "..";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import { modalAnimation } from "../../themes";
-import useTextsContext from "../../data/hooks/useTextsContext";
 
 export const ContactMe = () => {
-  const { data } = useTextsContext();
   const [email, setEmail] = useState<string>("");
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -26,13 +24,13 @@ export const ContactMe = () => {
         "service_l0hfrfn",
         "template_3gbvmba",
         templateParams,
-        "vdolnk6PZIIswd1Jv"
+        "vdolnk6PZIIswd1Jv",
       )
       .then((response) => {
         console.log(
           "Email enviado com sucesso!",
           response.status,
-          response.text
+          response.text,
         );
         alert("Email enviado com sucesso!");
       })
@@ -43,18 +41,20 @@ export const ContactMe = () => {
   };
 
   return (
-    <section className={styles.cContainer} id='contact-me'>
-      <motion.div className={styles.form}
-      variants={modalAnimation}
-      initial="hidden"
-      whileInView="visible">
-        <h3>{data.section4.title}</h3>
+    <section className={styles.cContainer} id="contact-me">
+      <motion.div
+        className={styles.form}
+        variants={modalAnimation}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <h3>FALE COMIGO</h3>
         <form onSubmit={handleSubmit}>
           <div>
             <input
               type="email"
               id="email"
-              placeholder={data.section4.email}
+              placeholder={"E-mail"}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -64,7 +64,7 @@ export const ContactMe = () => {
             <input
               type="text"
               id="subject"
-              placeholder={data.section4.subject}
+              placeholder={"Assunto"}
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               required
@@ -73,13 +73,13 @@ export const ContactMe = () => {
           <div>
             <textarea
               id="message"
-              placeholder={data.section4.message}
+              placeholder={"Escreva uma mensagem..."}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
           </div>
-          <Button type="submit" text={data.section4.button}/>
+          <Button type="submit" text={"Enviar"} />
         </form>
       </motion.div>
     </section>

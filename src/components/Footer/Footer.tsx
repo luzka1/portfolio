@@ -5,9 +5,11 @@ import { useNavigate } from "react-router-dom";
 import useAppConfigContext from "../../data/hooks/useAppConfigContext";
 
 export const Footer = () => {
-  const { data } = useTextsContext();
   const navigate = useNavigate();
   const { dataConfig } = useAppConfigContext();
+
+  const now = Date.now();
+  const year = new Date(now).getFullYear();
 
   const handleScrollToSection = (section: string) => {
     navigate("/");
@@ -24,12 +26,12 @@ export const Footer = () => {
     {
       alt: "github icon",
       description: require("../../assets/images/github.svg").default,
-      href: "https://github.com/luzka1"
+      href: "https://github.com/luzka1",
     },
     {
       alt: "linkedin icon",
       description: require("../../assets/images/linkedin.svg").default,
-      href: "https://www.linkedin.com/in/lucas-santos-341856247/"
+      href: "https://www.linkedin.com/in/lucas-santos-341856247/",
     },
     {
       alt: "email icon",
@@ -50,23 +52,37 @@ export const Footer = () => {
       <nav className={styles.navSocials}>
         {socialsIcons.map((item, id) => (
           <div key={id} className={styles.icon}>
-            <a href={item.href}><img src={item.description} width={25} height={25} alt={item.alt} /></a>
+            <a href={item.href}>
+              <img
+                src={item.description}
+                width={25}
+                height={25}
+                alt={item.alt}
+              />
+            </a>
           </div>
         ))}
       </nav>
+
       <nav className={styles.navLinks}>
-        {data.footer.texts.map((item, id) => (
-            <button
-              key={id}
-              onClick={() => handleScrollToSection(item.linkTo)}
-              type="button"
-            >
-              {item.name}
-            </button>
-          ))}
+        <button onClick={() => handleScrollToSection("projects")} type="button">
+          Projetos
+        </button>
+
+        <button onClick={() => handleScrollToSection("about-me")} type="button">
+          Sobre mim
+        </button>
+
+        <button
+          onClick={() => handleScrollToSection("contact-me")}
+          type="button"
+        >
+          Contato
+        </button>
       </nav>
       <div className={styles.dev}>
-        {data.footer.rights}
+        Desenvolvido por lucasgsantos1727@gmail.com {year} © Todos os direitos
+        reservados.
       </div>
     </footer>
   );
